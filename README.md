@@ -1,3 +1,1 @@
-# indecision
-# expensify
 # expensify

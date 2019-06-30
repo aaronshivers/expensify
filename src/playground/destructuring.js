@@ -17,15 +17,26 @@
 //   console.log(`It's ${ temperature } on ${ planet }`)
 // }
 
-const book = {
-  title: 'Book Title',
-  author: 'Book Author',
-  publisher: {
-    name: 'Publisher Name'
-  }
-}
+// const book = {
+//   title: 'Book Title',
+//   author: 'Book Author',
+//   publisher: {
+//     name: 'Publisher Name'
+//   }
+// }
 
-const { name: publisherName = 'Self-Published' } = book.publisher
+// const { name: publisherName = 'Self-Published' } = book.publisher
 
-console.log(publisherName)
+// console.log(publisherName)
 
+// const address = ['123 S Oak St', 'Independence', 'MO', 64057]
+
+// const [, city, state = 'Kansas'] = address
+
+// console.log(`You are in ${ city } ${ state }`)
+
+const item = ['coffee', '$2.00', '$2.50', '$3.00']
+
+const [type, , price] = item
+
+console.log(`A medium ${ type } costs ${ price }`)

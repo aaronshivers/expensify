@@ -30,7 +30,6 @@
     "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "start": "npm run build",
     "start:dev": "webpack-dev-server --development",
     "build": "webpack --mode production"
   },

@@ -1,5 +1,6 @@
 import expensesReducer from '../../reducers/expenses'
 import expenses from '../fixtures/expenses'
+import ReactTestRenderer from 'react-test-renderer';
 
 test('should set default state', () => {
   const state = expensesReducer(undefined, { type: '@@INIT' })

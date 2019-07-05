@@ -30,10 +30,14 @@ export class ExpenseListFilters extends Component {
   render() {
     return (
       <div>
-        <input type="text" value={ this.props.filters.text } onChange={ this.onSortChange } />
+        <input
+          type="text"
+          value={ this.props.filters.text }
+          onChange={ this.onTextChange }
+        />
         <select
           value={ this.props.filters.sortBy }
-          onChange={ this.onTextChange }
+          onChange={ this.onSortChange }
         >
           <option value="date">Date</option>
           <option value="amount">Amount</option>

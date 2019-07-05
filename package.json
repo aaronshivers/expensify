@@ -40,6 +40,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
+    "dev-server": "webpack-dev-server",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack -p --env production",
     "test": "jest --watch --config=jest.config.json",

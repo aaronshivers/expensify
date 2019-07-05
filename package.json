@@ -41,7 +41,8 @@
     "start": "node server/server.js",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack -p --env production",
-    "test": "jest --watch --config=jest.config.json"
+    "test": "jest --watch --config=jest.config.json",
+    "heroku-postbuild": "npm run build:prod"
   },
   "repository": {
     "type": "git",

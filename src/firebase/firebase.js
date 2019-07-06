@@ -14,18 +14,20 @@ firebase.initializeApp(firebaseConfig)
 
 const database = firebase.database()
 
-database
-  .ref('expenses')
-  .on('child_removed', snapshot => console.log(snapshot.key, snapshot.val()))
+export { firebase, database as default }
 
-database
-  .ref('expenses')
-  .on('child_changed', snapshot => console.log(snapshot.key, snapshot.val()))
+// database
+//   .ref('expenses')
+//   .on('child_removed', snapshot => console.log(snapshot.key, snapshot.val()))
+
+// database
+//   .ref('expenses')
+//   .on('child_changed', snapshot => console.log(snapshot.key, snapshot.val()))
 
 
-database
-  .ref('expenses')
-  .on('child_added', snapshot => console.log(snapshot.key, snapshot.val()))
+// database
+//   .ref('expenses')
+//   .on('child_added', snapshot => console.log(snapshot.key, snapshot.val()))
 
 // database
 //   .ref('expenses')
@@ -60,14 +62,14 @@ database
 //     console.log(expenses)
 //   })
 
-database
-  .ref('expenses')
-  .push({
-    description: 'ham',
-    note: 'i like ham',
-    amount: 500,
-    createdAt: Date.now()
-  })
+// database
+//   .ref('expenses')
+//   .push({
+//     description: 'ham',
+//     note: 'i like ham',
+//     amount: 500,
+//     createdAt: Date.now()
+//   })
 
 // database
 //   .ref('notes/-Lj4LQbE9uOPNhbXrN1w')

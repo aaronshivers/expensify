@@ -14,19 +14,82 @@ firebase.initializeApp(firebaseConfig)
 
 const database = firebase.database()
 
-database.ref().set({
-  name: 'Bob Jenkins',
-  age: 233,
-  isAlive: true,
-  location: {
-    city: 'Austin',
-    state: 'Texas'
-  }
-}).then(() => {
-  console.log('Data Saved')
-}).catch(err => {
-  console.log(err)
-})
+const onValueChange = database
+  .ref()
+  .on('value', snapshot => {
+    const val = snapshot.val()
+    console.log(`${ val.name } is a ${ val.job.title } at ${ val.job.company }.`)
+  },
+    err => console.log(err.message)
+  )
+
+database
+  .ref()
+  .set({
+    name: 'Andrew',
+    job: {
+      title: 'Software Developer',
+      company: 'Amazon'
+    }
+  })
+  .catch(err => console.log(err.message))
+
+// const onValueChange = database
+//   .ref()
+//   .on('value', snapshot => console.log(snapshot.val()),
+//     err => console.log(err.message)
+//   )
+
+// setTimeout(() => {
+//   database
+//     .ref('age')
+//     .set(29)
+// }, 3500)
+
+// setTimeout(() => {
+//   database
+//     .ref()
+//     .off('value', onValueChange)
+// }, 7000)
+
+// setTimeout(() => {
+//   database
+//     .ref('age')
+//     .set(30)
+// }, 10500)
+
+// database
+//   .ref()
+//   .once('value')
+//   .then(dataSnapshot => JSON.stringify(dataSnapshot, null, 2))
+//   .then(json => console.log(json))
+//   .catch(err => console.log(err.message))
+
+// database.ref().set({
+//   name: 'Bob Jenkins',
+//   age: 233,
+//   job: {
+//     title: 'software developer',
+//     company: 'Google'
+//   },
+//   stressLevel: 6,
+//   location: {
+//     city: 'Austin',
+//     state: 'Texas'
+//   }
+// }).then(() => {
+//   console.log('Data Saved')
+// }).catch(err => {
+//   console.log(err)
+// })
+
+// database
+//   .ref()
+//   .update({
+//     stressLevel: 9,
+//     'job/company': 'Amazon',
+//     'location/city': 'Houston'
+//   })
 
 // database.ref().set('this is some data')
 

@@ -22,17 +22,33 @@ database.ref().set({
     city: 'Austin',
     state: 'Texas'
   }
+}).then(() => {
+  console.log('Data Saved')
+}).catch(err => {
+  console.log(err)
 })
 
 // database.ref().set('this is some data')
 
-database.ref('age').set(71)
+// database.ref('age').set(71)
 
-database.ref('location/city',).set('Houston')
+// database.ref('location/city',).set('Houston')
 
-database.ref('attributes').set({
-  height: 56,
-  weight: 333
-})
+// database
+//   .ref('attributes')
+//   .set({
+//     height: 500,
+//     weight: 150
+//   })
+//   .then(() => console.log('Data Updated'))
+//   .catch(err => console.log(err))
 
-console.log('Data Change Request Made')
+// database
+//   .ref()
+//   .remove()
+//   .then(() => console.log('Item Removed'))
+//   .catch(err => console.log(err.message))
+
+// database
+//   .ref('isAlive')
+//   .set(null)

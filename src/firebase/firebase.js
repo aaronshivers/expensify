@@ -14,25 +14,133 @@ firebase.initializeApp(firebaseConfig)
 
 const database = firebase.database()
 
-const onValueChange = database
-  .ref()
-  .on('value', snapshot => {
-    const val = snapshot.val()
-    console.log(`${ val.name } is a ${ val.job.title } at ${ val.job.company }.`)
-  },
-    err => console.log(err.message)
-  )
+database
+  .ref('expenses')
+  .on('child_removed', snapshot => console.log(snapshot.key, snapshot.val()))
 
 database
-  .ref()
-  .set({
-    name: 'Andrew',
-    job: {
-      title: 'Software Developer',
-      company: 'Amazon'
-    }
+  .ref('expenses')
+  .on('child_changed', snapshot => console.log(snapshot.key, snapshot.val()))
+
+
+database
+  .ref('expenses')
+  .on('child_added', snapshot => console.log(snapshot.key, snapshot.val()))
+
+// database
+//   .ref('expenses')
+//   .once('value')
+//   .then(snapshot => {
+//     const expenses = []
+
+//     snapshot.forEach(childSnapshot => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       })
+//     })
+//     console.log(expenses)
+//   })
+
+// const createArray = obj => obj.map(child => {
+//   expenses.push
+// })
+
+// database
+//   .ref('expenses')
+//   .on('value', snapshot => {
+//     const expenses = []
+
+//     snapshot.forEach(childSnapshot => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       })
+//     })
+//     console.log(expenses)
+//   })
+
+database
+  .ref('expenses')
+  .push({
+    description: 'ham',
+    note: 'i like ham',
+    amount: 500,
+    createdAt: Date.now()
   })
-  .catch(err => console.log(err.message))
+
+// database
+//   .ref('notes/-Lj4LQbE9uOPNhbXrN1w')
+//   .update({
+//     body: 'Buy Food'
+//   })
+//   .remove()
+
+// database
+//   .ref('notes')
+//   .push({
+//     title: 'Todo',
+//     body: 'Eat Food'
+//   })
+
+// database
+//   .ref('notes')
+//   .push({
+//     title: 'Todo2',
+//     body: 'Cook Food'
+//   })
+
+// const firebaseNotes = {
+//   notes: {
+//     aslk3423: {
+//       id: '12',
+//       title: 'First Note',
+//       body: 'This is a note'
+//     },
+//     l234ljksdf: {
+//       id: '234',
+//       title: 'Second Note',
+//       body: 'This is another note'
+//     }
+//   }
+// }
+
+// const notes = [{
+//   id: '12',
+//   title: 'First Note',
+//   body: 'This is a note'
+// }, {
+//   id: '234',
+//   title: 'Second Note',
+//   body: 'This is another note'
+// }]
+
+// database
+//   .ref('notes')
+//   .set(notes)
+
+// database
+//   .ref('notes/12')
+
+// const onValueChange = database
+//   .ref()
+//   .on('value', snapshot => {
+//     const val = snapshot.val()
+//     console.log(`${ val.name } is a ${ val.job.title } at ${ val.job.company }.`)
+//   },
+//     err => console.log(err.message)
+//   )
+
+// database
+//   .ref()
+//   .set({
+//     name: 'Andrew',
+//     job: {
+//       title: 'Software Developer',
+//       company: 'Amazon'
+//     }
+//   })
+//   .catch(err => console.log(err.message))
 
 // const onValueChange = database
 //   .ref()

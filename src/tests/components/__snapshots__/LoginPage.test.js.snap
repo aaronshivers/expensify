@@ -10,7 +10,7 @@ exports[`should render LoginPage correctly 1`] = `
     <h1
       className="box-layout__title"
     >
-      Expensify
+      Piggy
     </h1>
     <p>
       Track your expenses.

@@ -1,0 +1,11 @@
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+  color: $dark-grey !important;
+  background: $salmon !important;
+  border: $salmon !important;
+}
+
+.CalendarDay__selected_span {
+  color: $dark-grey !important;
+  background: $melon !important;
+  border: $melon !important;
+}

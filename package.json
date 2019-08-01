@@ -1,5 +1,5 @@
 {
-  "name": "expensify",
+  "name": "piggy",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -59,13 +59,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaronshivers/expensify.git"
+    "url": "git+https://github.com/aaronshivers/piggy.git"
   },
   "keywords": [],
   "author": "aaron shivers",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aaronshivers/expensify/issues"
+    "url": "https://github.com/aaronshivers/piggy/issues"
   },
-  "homepage": "https://github.com/aaronshivers/expensify#readme"
+  "homepage": "https://github.com/aaronshivers/piggy#readme"
 }
